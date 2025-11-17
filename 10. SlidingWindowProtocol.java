@@ -1,4 +1,4 @@
-public class Swp {
+public class SlidingWindowProtoco {
     private final int windowSize;
     private int sendBase;
     private int nextSeqNum;

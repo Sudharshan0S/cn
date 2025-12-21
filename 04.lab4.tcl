@@ -26,7 +26,8 @@ $ns trace-all $trfd
 $ns namtrace-all-wireless $namfd $opt(x) $opt(y)
 
 set topo [new Topography]
-$topo load_flatgrid $opt(x) $opt(y) set god_ [create-god $val(nn)]
+$topo load_flatgrid $opt(x) $opt(y) 
+set god_ [create-god $val(nn)]
 
 #Configure the nodes
 $ns node-config -adhocRouting $val(rp) \

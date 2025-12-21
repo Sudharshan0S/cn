@@ -1,4 +1,5 @@
-set ns [new Simulator] set f [open out.tr w]
+set ns [new Simulator] 
+set f [open out.tr w]
 set nf [open out.nam w]
 
 $ns trace-all $f

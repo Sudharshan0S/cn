@@ -7,10 +7,13 @@ set val(chan)  Channel/WirelessChannel
 set val(prop)  Propagation/TwoRayGround 
 set val(ant) Antenna/OmniAntenna
 set val(ll) LL
-set val(ifq) Queue/DropTail/PriQueue set val(ifqlen)  50
-set val(netif) Phy/WirelessPhy set val(mac)  Mac/802_11
+set val(ifq) Queue/DropTail/PriQueue 
+set val(ifqlen)  50
+set val(netif) Phy/WirelessPhy 
+set val(mac)  Mac/802_11
 set val(rp) AODV
-set val(nn) [lindex $argv 0] set opt(x)  750
+set val(nn) [lindex $argv 0] 
+set opt(x)  750
 set opt(y) 750
 set val(stop) 100
 

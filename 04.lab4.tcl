@@ -3,7 +3,9 @@ error "Command: ns <ScriptName.tcl> <Number_of_Nodes>" exit 0
 }
 
 #Define the simulation options
-set val(chan)  Channel/WirelessChannel set val(prop)  Propagation/TwoRayGround set val(ant) Antenna/OmniAntenna
+set val(chan)  Channel/WirelessChannel 
+set val(prop)  Propagation/TwoRayGround 
+set val(ant) Antenna/OmniAntenna
 set val(ll) LL
 set val(ifq) Queue/DropTail/PriQueue set val(ifqlen)  50
 set val(netif) Phy/WirelessPhy set val(mac)  Mac/802_11

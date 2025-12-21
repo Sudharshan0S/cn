@@ -76,7 +76,8 @@ puts $outFile2 "YUnitText: CongestionWindowSize"
 
 #define findWindowSize
  
-proc findWindowSize {tcpSource outFile} { global ns
+proc findWindowSize {tcpSource outFile} {
+global ns
 set now [$ns now]
 set cWindSize [$tcpSource set cwnd_] 
 puts $outFile "$now $cWindSize"

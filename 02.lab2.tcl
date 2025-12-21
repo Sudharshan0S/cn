@@ -5,10 +5,13 @@ set nf [open out.nam w]
 $ns trace-all $f
 $ns namtrace-all $nf
 
-proc finish {} { global ns f nf
-$ns flush-trace close $f
+proc finish {} { 
+global ns f nf
+$ns flush-trace 
+close $f
 close $nf
-exec nam out.nam & exit 0 
+exec nam out.nam & 
+exit 0 
 }
 
 set n0 [$ns node] set n1 [$ns node] set n2 [$ns node] set n3 [$ns node] set n4 [$ns node] set n5 [$ns node]

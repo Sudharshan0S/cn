@@ -46,11 +46,13 @@ $ns node-config -adhocRouting $val(rp) \
 
 -movementTrace OFF
 
-for {set i 0} {$i < $val(nn)} {incr i} { set n($i) [$ns node]
+for {set i 0} {$i < $val(nn)} {incr i} { 
+set n($i) [$ns node]
 }
 
 #Randomly placing the nodes
-for {set i 0} {$i < $val(nn)} {incr i} { set XX [expr rand()*750]
+for {set i 0} {$i < $val(nn)} {incr i} { 
+set XX [expr rand()*750]
 set YY [expr rand()*750]
 $n($i) set X_ $XX
 $n($i) set Y_ $YY
@@ -73,8 +75,10 @@ $ns connect $tcp1 $sink1
 
 $ns at 0.0 "destination" proc destination {} {
 global ns val n
-set now [$ns now] set time 5.0
-for {set i 0} {$i < $val(nn)} {incr i} { set XX [expr rand()*750]
+set now [$ns now] 
+set time 5.0
+for {set i 0} {$i < $val(nn)} {incr i} { 
+set XX [expr rand()*750]
 set YY [expr rand()*750]
 $ns at [expr $now + $time] "$n($i) setdest $XX $YY 20.0"
 }
@@ -92,10 +96,12 @@ $ns at $val(stop) "stop"
 
 
 proc stop {} {
-global ns trfd namfd close $trfd
+global ns trfd namfd 
+close $trfd
 close $namfd
 exec nam Wireless.nam &
-exec awk -f 6.awk Wireless.tr & exit 0
+exec awk -f 6.awk Wireless.tr & 
+exit 0
 }
 
 $ns run

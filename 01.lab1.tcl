@@ -46,7 +46,7 @@ $ns duplex-link-op $n1 $n2 orient right
 
 #Create a UDP Agent and attach to the node n1 
 set udp0 [new Agent/UDP]
-$ns attach-agent $n0 $udp0
+$ns attach-agent $n1 $udp0
 
 #Create a CBR Traffic source and attach to the UDP Agent 
 set cbr0 [new Application/Traffic/CBR]

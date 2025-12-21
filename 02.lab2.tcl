@@ -54,7 +54,8 @@ $ns attach-agent $n5 $ping5
 $ns connect $ping0 $ping4
 $ns connect $ping1 $ping5
 
-proc sendPingPacket {} { global ns ping0 ping1
+proc sendPingPacket {} {
+global ns ping0 ping1
 set intervalTime 0.001 
 set now [$ns now]
 $ns at [expr $now + $intervalTime] "$ping0 send"

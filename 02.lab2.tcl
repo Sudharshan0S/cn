@@ -14,7 +14,12 @@ exec nam out.nam &
 exit 0 
 }
 
-set n0 [$ns node] set n1 [$ns node] set n2 [$ns node] set n3 [$ns node] set n4 [$ns node] set n5 [$ns node]
+set n0 [$ns node] 
+set n1 [$ns node] 
+set n2 [$ns node] 
+set n3 [$ns node] 
+set n4 [$ns node] 
+set n5 [$ns node]
 
 $n0 label "ping0"
 $n1 label "ping1"
@@ -50,13 +55,15 @@ $ns connect $ping0 $ping4
 $ns connect $ping1 $ping5
 
 proc sendPingPacket {} { global ns ping0 ping1
-set intervalTime 0.001 set now [$ns now]
+set intervalTime 0.001 
+set now [$ns now]
 $ns at [expr $now + $intervalTime] "$ping0 send"
 $ns at [expr $now + $intervalTime] "$ping1 send"
 $ns at [expr $now + $intervalTime] "sendPingPacket"
 }
  
-Agent/Ping instproc recv {from rtt} { global seq
+Agent/Ping instproc recv {from rtt} { 
+global seq
 $self instvar node_
 puts "The node [$node_ id] received an ACK from the node $from with RTT $rtt ms"
 }
